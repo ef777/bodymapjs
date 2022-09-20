@@ -21,9 +21,7 @@ import re
 import requests
 
 
-app = Flask(__name__,
-            static_folder='/home/lystra/Belgeler/body/static',
-            template_folder='/home/lystra/Belgeler/body/templates')
+app = Flask(__name__)
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -31,7 +29,7 @@ def sorgusa():
     return render_template("index.html")
 
 
-@app.route("/dataa", methods=["GET", "POST"])
+@app.route("/dataa" , methods=["GET", "POST"])
 def sorgula2():
     symptomWarning = request.form.get('symptomWarning')
     distributionHasQuestion = request.form.get('distributionHasQuestion')
